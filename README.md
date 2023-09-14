@@ -2,6 +2,10 @@
 
 Haz un fork de este repo
 
+NOTA: Esta tarea se puede ejecutar en el playground de docker.
+
+https://labs.play-with-docker.com/
+
 ## Actividad 1: Mi primer docker-compose
 
 Revisa el archivo `docker-compose.yml`.

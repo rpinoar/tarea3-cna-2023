@@ -1,12 +1,10 @@
 // src/websocket.js
 
-const host = 'localhost:8080'
-
 export let send
 let onMessageCallback
 
 export const startWebsocketConnection = () => {
-    const ws = new window.WebSocket('ws://' + host + '/chat') || {}
+    const ws = new window.WebSocket('ws://' + window.location.host + '/chat') || {}
 
     ws.onopen = () => {
         console.log('opened ws connection')

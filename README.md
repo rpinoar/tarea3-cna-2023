@@ -111,15 +111,27 @@ Registra un usuario, la aplicación debería estar corriendo correctamente.
 
 ## Preguntas
 
+## INTEGRANTES: JAZNA MEZA Y RICARDO PINO
+
 1. Revisa el archivo `Dockerfile` en la carpeta `users-svc` y compáralo con el mismo archivo en la carpeta `ws-server`. ¿Qué te llama la atención? Ahora revisa la sentencia `command` para los respectivos servicios en el archivo `docker-compose.yml`. ¿Qué concluyes?
+
+RESPUESTA: el archivo Dockerfile de las carpetas users-svc y ws-server son idénticos. al revisar la sentencia command se puede observar que una de ellas ejecuta el servicio app.js y la otra al servicio index.js 
 
 2. Revisa el archivo `Dockerfile` en la carpeta `frontend`. ¿Qué te llama la atención? ¿En qué es diferente de los otros archivos `Dockerfile`?
 
+RESPUESTA: crea un build directory con un production build de la app. Dentro del directorio build/static estarán los archivos javascript y CSS 
+
 3. ¿Para qué sirve el servicio flyway? ¿Qué pasa al hacer `docker ps` con respecto a este servicio?
 
+RESPUESTA: Es una herramienta de código abierto que sirve para procesos de migración de bases de datos. Al ejecutar docker ps el servicio no aparece, porque se encuentra asociado a servicio de postgres.
+   
 4. ¿Cuantas imágenes se crean? ¿Cuántos contenedores están activos?
 
+RESPUESTA: se crean 4 imágenes y 4 contenedores activos
+ 
 5. Deten los contenedores con `docker-compose down`, luego reinicia con `docker-compose up -d`. Ingresa a la base de datos. ¿Qué pasa con los datos? 
+
+RESPUESTA: Los datos no se encuentran disponibles
 
 6. Baja los contenedres. Crea un volumen para postgres agregando estas sentencias en el servicio `postgres`: 
 
@@ -130,5 +142,8 @@ Registra un usuario, la aplicación debería estar corriendo correctamente.
 
 Reinicia los contenedores. Explica qué pasa con la base de datos después de hacer esto.
 
+RESPUESTA: la base de datos no contiene datos
+
 ¿Qué pasa con la carpeta `data`, qué crees que contiene?
 
+RESPUESTA: la carpeta data se crea despues de iniciar los contenedores producto de la configuración del volumen en el archivo de servicios. Esta carpeta contiene directorios y archivos de configuración relacionados con replicas de la base de datos.
